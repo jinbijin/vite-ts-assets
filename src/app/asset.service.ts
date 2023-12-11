@@ -8,7 +8,11 @@ import { Observable } from "rxjs";
 export class AssetService {
   readonly #httpClient = inject(HttpClient);
 
-  getTsAsset(): Observable<any> {
+  getTsAsset(): Observable<string> {
     return this.#httpClient.get('/assets/unresolved.ts', { responseType: 'text' });
+  }
+
+  getTsLink(): Observable<string> {
+    return this.#httpClient.get('https://raw.githubusercontent.com/angular/angular/main/packages/core/index.ts', { responseType: 'text' });
   }
 }

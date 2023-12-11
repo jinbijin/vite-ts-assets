@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   title = 'vite-ts-assets';
 
   ngOnInit(): void {
+    this.#assetService.getTsLink().subscribe(console.log);
     this.#assetService.getTsAsset().subscribe(console.log);
   }
 }
